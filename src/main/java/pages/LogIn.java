@@ -45,12 +45,14 @@ public class LogIn {
 	
 	public void validateUserId() {
 		elementDisplayed(loginLogo);
+		elementDisplayed(loginLogo);
 		elementDisplayed(userId);
 		inputText(userId, "enthrall_12");
 		pause(3000);
 	}
 	
 	public void validatePassword() {
+		elementDisplayed(loginLogo);
 		elementDisplayed(password);
 		inputText(password, "OnthrallTest@1234");
 		pause(3000);
@@ -74,6 +76,19 @@ public class LogIn {
 		verifyCurrentUrl(driver, "https://portal.cms.gov/portal/");
 		// for above 2 lines, I have no change, but if you move to a new page, you must have to check
 		validationOfHeader(multiFactorAuthentication, "Multi-factor Authentication");
+		pause(3000);
+	}
+	
+	public void validateUserId (String string) {
+		elementDisplayed(loginLogo);
+		elementDisplayed(userId);
+		inputText(userId, string);
+		pause(3000);
+	}
+	
+	public void validatePassword (String string) {
+		elementDisplayed(password);
+		inputText(password, string);
 		pause(3000);
 	}
 	
