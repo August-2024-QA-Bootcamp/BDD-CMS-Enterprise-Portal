@@ -7,6 +7,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.LogIn;
+import pages.NewUserRegistration;
 import utils.Configuration;
 import static utils.IConstant.*;
 
@@ -15,6 +16,7 @@ public class BaseClass {
 	Configuration configuration;
 	// Make below classes static to avoid NullPointerException
 	public static LogIn logIn;
+	public static NewUserRegistration newUserRegistration;
 
 	// We don't use annotation here. Annotation is used in hook class
 	// because step definition class extends base class, if base class contains annotation,
@@ -60,6 +62,7 @@ public class BaseClass {
 
 	public void initClass(WebDriver driver) {
 		logIn = new LogIn(driver);
+		newUserRegistration = new NewUserRegistration(driver);
 	}
 
 	public void tearUp() {

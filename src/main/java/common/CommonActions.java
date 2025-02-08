@@ -366,7 +366,7 @@ public class CommonActions {
 		}
 	}
 	
-	public static void verifyErrorMessageTopOfThePage (WebElement element, Attribute attribute, String expectedErrorMessage) {
+	public static void verifyErrorMessageOnTheTopOfThePage (WebElement element, Attribute attribute, String expectedErrorMessage) {
 		try {
 			String actualErrorMessage = getAttributeValue(element, attribute) + " is a required field.";
 			logger.info("The Web Element " + element + " ---> has Actual Error Message : " + actualErrorMessage + " and Expected Error Message : " + expectedErrorMessage);
